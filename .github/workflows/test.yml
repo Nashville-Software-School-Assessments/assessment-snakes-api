@@ -1,0 +1,32 @@
+name: Python tests
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pgrep
+    - name: startserver
+      run: python request_handler.py &
+    - name: run tests
+      run: pytest
+    - name: check and stop server
+      run: |
+        if pgrep -f "python request_handler.py" > /dev/null; then
+          kill $(pgrep -f "python request_handler.py")
+        fi
+
