@@ -128,18 +128,6 @@ We strongly urge you to read all of these requirements carefully before you begi
 
 ---
 
-**Given** the client wants to create a snake<br/>
-**When** the client send a POST request to `/snakes`<br/>
-**And** the client **does not** include all required properties in the request body<br/>
-**Then** the client should receive a message in the response body detailing the missing properties<br/>
-**And** the response status code should 400<br/>
-
-| Method | URL | Response Body |
-|--|--|--|
-| POST | http://localhost:8088/snakes | Dictionary |
-
----
-
 **Given** a client wants to view all owners<br/>
 **When** the client makes a GET request to `/owners`<br/>
 **Then** the client should receive a list of dictionaries for all owners<br/>
@@ -159,6 +147,20 @@ We strongly urge you to read all of these requirements carefully before you begi
 | Method | URL | Response Body |
 |--|--|--|
 | GET | http://localhost:8088/owners/4 | Dictionary |
+
+---
+
+**Given** the client wants to create a snake<br/>
+**When** the client send a POST request to `/snakes`<br/>
+**And** the client **does not** include all required properties in the request body<br/>
+**Then** the client should receive a message in the response body detailing the missing properties<br/>
+**And** the response status code should 400<br/>
+
+> If you did not get to the Explorer chapters in Book 1, you can either skip this requirement, or go look at the [Explorer chapter that covers it](https://github.com/nashville-software-school/bangazon-llc/blob/cohort-60/book-1-kennels/chapters/PK_EC_400.md)
+
+| Method | URL | Response Body |
+|--|--|--|
+| POST | http://localhost:8088/snakes | Dictionary |
 
 
 # Data
