@@ -41,7 +41,7 @@ def test_get_single_snake():
     """
     Ensure we can get (GET) a single snake.
     """
-    response = requests.get('http://localhost:8088/snakes/2')
+    response = requests.get('http://localhost:8088/snakes/1')
     assert response.status_code == 200
     assert isinstance(response.json(), dict)
 def test_get_snakes_by_species():
