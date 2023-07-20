@@ -66,7 +66,7 @@ def test_post_incomplete_snake():
 def test_no_alone_snakes():
     """_ make sure the aonyxx cinerea is not got alone :( _
     """
-    response = requests.get('http://localhost:8088/snakes/1')
+    response = requests.get('http://localhost:8088/snakes/2')
     assert response.status_code == 405
 def test_get_all_species():
     """
