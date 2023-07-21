@@ -107,7 +107,14 @@ def test_unsupported_put():
     """
     Ensure an unsupported endpoint returns a blank request body and status code 404.
     """
-    response = requests.put('http://localhost:8088/unsupported/1')
+    snake = {
+	"name":"adminsnake",
+	"owner_id": 1,
+	"species_id": 1,
+	"gender": "female",
+	"color": "blue"
+    }
+    response = requests.put('http://localhost:8088/unsupported/1', json='snake')
     assert response.status_code == 404
     assert isinstance(response.json(), str)
     assert response.json() == ""
