@@ -62,7 +62,7 @@ def test_post_incomplete_snake():
     "owner_id": 1}
     response = requests.post('http://localhost:8088/snakes', json=snake)
     assert response.status_code == 400
-    assert 'color' in response.json()['message']
+    assert 'color' in response.json()
 def test_no_alone_snakes():
     """_ make sure the aonyxx cinerea is not got alone :( _
     """
