@@ -100,7 +100,7 @@ def test_unsupported_post():
 	"gender": "female",
 	"color": "blue"
     }
-    response = requests.post('http://localhost:8088/unsupported', json='snake')
+    response = requests.post('http://localhost:8088/unsupported', json=snake)
     assert response.status_code == 404
     assert response.json() == ""
 def test_unsupported_put():
@@ -114,7 +114,7 @@ def test_unsupported_put():
 	"gender": "female",
 	"color": "blue"
     }
-    response = requests.put('http://localhost:8088/unsupported/1', json='snake')
+    response = requests.put('http://localhost:8088/unsupported/1', json=snake)
     assert response.status_code == 404
     assert isinstance(response.json(), str)
     assert response.json() == ""
