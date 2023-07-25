@@ -26,7 +26,7 @@ Your job is to build a snake API, also known as a Snake PI, that lets developers
 After running starting your virtual environment in the project directory run this command:
 
 ```sh
-pipenv install pytest
+pipenv install pytest requests
 ```
 When you believe you have completed all of the assessment requirements, run this commmand in your project directory:
 
